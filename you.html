@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hack Style Page</title>
+    <style>
+        body {
+            background: radial-gradient(circle at center, #000000, #0a0a0a, #111111);
+            color: #00ff99;
+            font-family: "Lucida Console", Monaco, monospace;
+            text-align: center;
+            padding-top: 20vh;
+        }
+
+        h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            position: relative;
+            display: inline-block;
+            animation: glitch 2s infinite;
+        }
+
+        h1::before, h1::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+        }
+
+        h1::before {
+            left: 2px;
+            text-shadow: -2px 0 #00ff99;
+            clip: rect(24px, 550px, 90px, 0);
+            animation: glitch 2s infinite;
+        }
+
+        h1::after {
+            left: -2px;
+            text-shadow: -2px 0 #ff00ff;
+            clip: rect(85px, 550px, 140px, 0);
+            animation: glitch 1.5s infinite;
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-3px, 3px);
+            }
+            40% {
+                transform: translate(3px, -3px);
+            }
+            60% {
+                transform: translate(-2px, 2px);
+            }
+            80% {
+                transform: translate(2px, -2px);
+            }
+            100% {
+                transform: translate(0);
+            }
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            text-shadow: 0 0 10px #00ff99;
+        }
+    </style>
+</head>
+<body>
+    <h1 data-text="Hacked By #JMrh">Hacked By #JMrh</h1>
+    <p>بلعافيه بيبي</p>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="">
+    <title> #JMrh </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <link rel="shortcut icon" href="https://i.hizliresim.com/Y6kG0k.jpg">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .video-bg video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false" onkeydown="return false" bgcolor="black">
+
+    <div class="video-bg">
+        <video autoplay muted loop>
+            <source src="https://cdn.discordapp.com/attachments/1261114958574387241/1295709483401740299/videoplayback.mp4?ex=672f46fd&is=672df57d&hm=41fd4d843ac45503bcdfdb07f715091664010aa9acc6327de9fc096a1c05d15e&" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="content">
+        <center><br><br>
+        <div class="imagehold">
+            <img src="https://cdn.discordapp.com/attachments/1261114958574387241/1297917601250279454/IMG_7833.jpg?ex=672f6676&is=672e14f6&hm=1cc7f2c783eb376c32e96f71eb2a77e91ad328c83fe0835085d0b527fc1c9a8a&" width="250" height="250">
+            <div style="color:red;font:12pt Courier New;"></div><br>
+            
+            <audio autoplay>
+                <source src="https://cdn.discordapp.com/attachments/1261114958574387241/1295710143186731141/-_Clipchamp_1.mp3?ex=672f479b&is=672df61b&hm=614a8fb15364f2868268fc9f7a9886ac3f40aaf639a197a7a933ded017bf0de2&" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </center>
+        <br><br>
+       
+        <br><br>
+        <div style="color:white;">
+            <b>your ip Address:</b> <span id="ip-address-value">Fetching...</span><br>
+            <b>ip information:</b>
+           <pre id="ip-info">Fetching...</pre>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        //form tags to omit in NS6+:
+        var omitformtags=["input", "textarea", "select"];
+        omitformtags=omitformtags.join("|");
+
+        function disableselect(e){
+            if (omitformtags.indexOf(e.target.tagName.toLowerCase())==-1)
+                return false;
+        }
+
+        function reEnable(){
+            return true;
+        }
+
+        if (typeof document.onselectstart != "undefined")
+            document.onselectstart = new Function ("return false");
+        else {
+            document.onmousedown = disableselect;
+            document.onmouseup = reEnable;
+        }
+
+        // JavaScript code to fetch and display the user's IP address and information
+        function fetchIPAndInfo() {
+            fetch('https://api.ipify.org/?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('ip-address-value').textContent = data.ip;
+                    return data.ip;
+                })
+                .then(ip => fetch(`https://ipinfo.io/${ip}/json`))
+                .then(response => response.json())
+                .then(ipInfoData => {
+                    document.getElementById('ip-info').textContent = JSON.stringify(ipInfoData, null, 2);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('ip-address-value').textContent = 'Unable to fetch IP address.';
+                    document.getElementById('ip-info').textContent = 'Unable to fetch IP information.';
+                });
+        }
+
+        // Fetch IP address and information initially
+        fetchIPAndInfo();
+    </script>
+</body>
+</html>
